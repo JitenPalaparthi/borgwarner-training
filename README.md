@@ -56,5 +56,14 @@ podman rm -f ub1
 docker  build . -f Dockerfile -t jpalaparthi/ubuntu-curl:v01
 ```
 
-apt-get update
-apt-get install -y curl
+### Run postgres db
+
+```bash
+podman run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=appdb postgres:16
+```
+
+### Run the admin UI
+
+```bash
+podman -d --name dbui -p 18080:8080 adminer
+```
