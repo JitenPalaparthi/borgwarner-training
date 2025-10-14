@@ -15,3 +15,15 @@ podman network create demo-network
 
 podman network inspect demo-network
 ```
+
+### To run a container 
+
+```bash
+podman run -d --name nginx1 -p 28080:80 --network demo-network nginx:stable-alpine3.21 
+```
+
+### To check running containers 
+
+```bash
+podman ps
+```
