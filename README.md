@@ -27,3 +27,34 @@ podman run -d --name nginx1 -p 28080:80 --network demo-network nginx:stable-alpi
 ```bash
 podman ps
 ```
+
+### To run contaier and interactive tty 
+
+```bash
+podman run -i -t --network=demo-network --name ub1 ubuntu bash
+```
+
+
+### Run a stopped container
+
+```bash
+podman start ub1
+podman exec -it ub1 bash
+```
+
+### podman commands 
+
+```bash
+podman stop ub1 
+# to delete the container
+podman rm -f ub1
+```
+
+### building an image
+
+```bash
+docker  build . -f Dockerfile -t jpalaparthi/ubuntu-curl:v01
+```
+
+apt-get update
+apt-get install -y curl
