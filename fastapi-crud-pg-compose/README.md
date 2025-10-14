@@ -31,3 +31,9 @@ pip install -r requirements.txt
 # default falls back to SQLite (app.db)
 uvicorn app.main:app --reload
 ```
+
+### To copy date from localmachine to container
+
+```bash
+podman cp fastapi-crud-pg-compose ub1:/src
+```

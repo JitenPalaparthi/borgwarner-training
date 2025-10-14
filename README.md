@@ -67,3 +67,15 @@ podman run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_U
 ```bash
 podman -d --name dbui -p 18080:8080 adminer
 ```
+
+### To connect a container to a new network
+
+```bash
+ podman network connect demo-network dbui
+ ```
+
+ Create a simple FastAPI based application that should have an end point to upload files
+
+ create podman volume and run the application as container by attaching the volume
+
+ podman -d -v images-data:/data 
