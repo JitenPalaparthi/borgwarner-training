@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+  Address address=4;
+}
+
+message Address {
+  string line1=1;
+  string line2=2;
+  string line3=3;
+}

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import select
-from .models import Item
+from app.models import Item
 
 def create_item(db: Session, *, name: str, description: str | None, price: float) -> Item:
     if db.execute(select(Item).where(Item.name == name)).scalar_one_or_none():

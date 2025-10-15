@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .db import Base, engine
-from .routers import items
+from app.db import Base, engine
+from app.routers import items
 
 app = FastAPI(title="FastAPI CRUD Service (Postgres-ready)", version="1.1.0")
 
