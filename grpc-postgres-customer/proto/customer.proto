@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package customer;
+
+message Customer {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+  string phone = 4;
+  int64 created_at_unix = 5; // seconds since epoch (UTC)
+}
+
+message CreateCustomerRequest {
+  string name = 1;
+  string email = 2;
+  string phone = 3;
+}
+message GetAllCustomers{
+
+}
+
+message GetCustomerRequest {
+  int64 id = 1;
+}
+message UpdateCustomerRequest {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+  string phone = 4;
+}
+message DeleteCustomerRequest {
+  int64 id = 1;
+}
+message ListCustomersRequest {
+  int32 limit = 1;   // optional; 0 means default
+  int32 offset = 2;  // optional
+}
+
+message CustomerResponse {
+  Customer customer = 1;
+}
+
+message GetAllCustomerResponse{
+  repeated Customer customers=1;
+}
+message DeleteCustomerResponse {
+  bool ok = 1;
+}
+
+service CustomerService {
+  rpc CreateCustomer (CreateCustomerRequest) returns (CustomerResponse);
+  rpc GetCustomer    (GetCustomerRequest)    returns (CustomerResponse);
+  rpc UpdateCustomer (UpdateCustomerRequest) returns (CustomerResponse);
+  rpc DeleteCustomer (DeleteCustomerRequest) returns (DeleteCustomerResponse);
+
+  // Server-streaming list
+  rpc ListCustomers  (ListCustomersRequest)  returns (stream Customer);
+}
