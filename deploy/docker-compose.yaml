@@ -13,6 +13,7 @@ services:
  
   haproxy:
       image: docker.io/library/haproxy:3.0
+      platform: linux/arm64
       networks: [patroninet]
       volumes:
         - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
