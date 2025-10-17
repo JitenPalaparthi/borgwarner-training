@@ -79,3 +79,17 @@ podman -d --name dbui -p 18080:8080 adminer
  create podman volume and run the application as container by attaching the volume
 
  podman -d -v images-data:/data 
+
+
+
+ ### architectures
+
+ - https://docs.google.com/presentation/d/1EohidaCowFN5Dvk0CtvjPyUAQCNbd3GRy69kHhx-E3M/edit?usp=sharing
+
+ ### kafka 
+
+ https://docs.google.com/presentation/d/1KWUX1cnm67mOEYtzM1NgR9JL79NCqRCC8cKWN7vHVHU/edit?usp=sharing
+
+ ### kubernetes
+
+ 

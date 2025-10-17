@@ -43,7 +43,6 @@ services:
       timeout: 10s
       retries: 10
 
-  
   kafka-ui:
     networks: [patroninet]
     image: provectuslabs/kafka-ui:latest
